@@ -1,0 +1,77 @@
+.xite-header {
+  $self: &;
+  padding: 2rem;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+
+  &__button {
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+    width: 4.4rem;
+    height: 4.4rem;
+    background: color("white");
+    z-index: 2;
+  }
+
+  &__icon {
+    transition: all 250ms;
+    fill: color("black");
+    width: 2.6rem;
+    height: 2.6rem;
+
+    #{$self}--opened & {
+      transform: rotate(45deg);
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+.xite-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  position: relative;
+  z-index: 2;
+  opacity: 0;
+
+  .xite-header--opened & {
+    background: color("white");
+    opacity: 1;
+  }
+
+  input {
+    background: transparent;
+    border: 0;
+    outline: 0;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+
+    &:focus {
+      border-bottom: 1px solid color("black");
+    }
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  &__button {
+    background: color("black");
+    margin-top: 1rem;
+    padding: 1rem;
+    color: color("white");
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 50rem;
+  }
+}

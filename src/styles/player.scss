@@ -1,0 +1,31 @@
+#xite-player {
+  width: 100%;
+  height: calc(100% - 7rem);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 300ms ease-in-out;
+
+  &.xite-player--show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+.xite-player-logo {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  color: color("white");
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  pointer-events: none;
+  font-weight: 600;
+  transition: all 300ms ease-in-out;
+
+  &--hide {
+    opacity: 0;
+  }
+}

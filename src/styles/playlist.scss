@@ -1,0 +1,93 @@
+$playlist-height: 29rem;
+
+.xite-playlist {
+  $self: &;
+  position: fixed;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: $playlist-height;
+  background: color("gray");
+  list-style: none;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  transition: top 250ms ease-in-out;
+  z-index: 999999;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h1 {
+      color: color("white");
+    }
+  }
+
+  &__button {
+    background: transparent;
+  }
+
+  &__icon {
+    transition: all 250ms;
+    fill: color("white");
+    width: 2.6rem;
+    height: 2.6rem;
+
+    #{$self}--opened & {
+      transform: rotate(45deg);
+    }
+  }
+
+  &--filled {
+    top: calc(100% - 7rem);
+  }
+
+  &--opened {
+    top: calc(100% - #{$playlist-height});
+  }
+}
+
+.xite-playlist-videos {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-top: 3rem;
+  overflow-y: scroll;
+  height: 100%;
+  flex: 0 1 auto;
+
+  li {
+    margin-right: 2rem;
+    flex: 0 0 60%;
+    cursor: pointer;
+
+    @media screen and (min-width: 768px) {
+      flex-basis: 19rem;
+    }
+  }
+
+  &__figure {
+    img {
+      width: 100%;
+      height: 11rem;
+      object-fit: cover;
+    }
+
+    figcaption {
+      margin-top: 2rem;
+    }
+
+    h2 {
+      color: color("white");
+      font-weight: 600;
+    }
+
+    h3 {
+      color: color("gray-light");
+      margin-top: 1rem;
+    }
+  }
+}

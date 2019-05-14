@@ -36,7 +36,7 @@ function Player() {
   // -----------------------------------------------------
 
   function initializeYouTube() {
-    const ytPlayer = new window.YT.Player('xite-player', {
+    const ytPlayer = new window.YT.Player('vp-player', {
       height: '100%',
       width: '100%',
       videoId: currentVideo,
@@ -79,20 +79,20 @@ function Player() {
   // Load a new Video when currentVideo changes
   useEffect(() => {
     const loadVideo = async () => {
-      const playerTitleEl = document.querySelector('.xite-player-logo');
-      const playlistEl = document.querySelector('.xite-playlist');
-      const playerEl = document.querySelector('#xite-player');
+      const playerTitleEl = document.querySelector('.vp-player-logo');
+      const playlistEl = document.querySelector('.vp-playlist');
+      const playerEl = document.querySelector('#vp-player');
 
       if (playerInstance) {
-        if (!playerTitleEl.classList.contains('xite-player-logo--hide'))
-          playerTitleEl.classList.add('xite-player-logo--hide');
+        if (!playerTitleEl.classList.contains('vp-player-logo--hide'))
+          playerTitleEl.classList.add('vp-player-logo--hide');
 
         playerInstance.loadVideoById(currentVideo);
 
         await delay(1000);
 
-        playerEl.classList.add('xite-player--show');
-        playlistEl.classList.remove('xite-playlist--opened');
+        playerEl.classList.add('vp-player--show');
+        playlistEl.classList.remove('vp-playlist--opened');
 
         if (videoFinished) setVideoFinished(false);
       }
@@ -110,12 +110,12 @@ function Player() {
 
   return (
     <Fragment>
-      <h1 className="xite-player-logo xite-fs-huge">
-        XITE
+      <h1 className="vp-player-logo vp-fs-huge">
+        VIDEO
         <br />
-        <span className="xite-fs-small">player</span>
+        <span className="vp-fs-small">player</span>
       </h1>
-      <div id="xite-player" />
+      <div id="vp-player" />
     </Fragment>
   );
 }

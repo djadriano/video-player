@@ -1,4 +1,4 @@
-.xite-header {
+.vp-header {
   $self: &;
   padding: 2rem;
   width: 100%;
@@ -34,7 +34,7 @@
   }
 }
 
-.xite-form {
+.vp-form {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -43,7 +43,7 @@
   z-index: 2;
   opacity: 0;
 
-  .xite-header--opened & {
+  .vp-header--opened & {
     background: color("white");
     opacity: 1;
   }

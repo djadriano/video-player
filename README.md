@@ -1,4 +1,4 @@
-# XITE Player
+# Video Player
 
 ## Stack
 

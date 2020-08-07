@@ -68,7 +68,7 @@ const Form = () => {
         <input
           name="video-url"
           type="text"
-          placeholder="Video Url"
+          placeholder="Youtube Video Url"
           className="vp-fs-medium"
           autoComplete="off"
           maxLength="255"
